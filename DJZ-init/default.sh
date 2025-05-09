@@ -194,6 +194,9 @@ function provisioning_start() {
     provisioning_get_models \
         "${WORKSPACE}/ComfyUI/models/esrgan" \
         "${ESRGAN_MODELS[@]}"
+    provisioning_get_models \
+        "${WORKSPACE}/ComfyUI/models/pulid" \
+        "${PULID_MODELS[@]}"
     provisioning_get_workflows
     provisioning_print_end
 }
