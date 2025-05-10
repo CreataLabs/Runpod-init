@@ -146,6 +146,10 @@ CONTROLNET_MODELS=(
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_style-fp16.safetensors"
 )
 
+PULID_MODELS=(
+	"https://huggingface.co/guozinan/PuLID/blob/main/pulid_flux_v0.9.1.safetensors"
+ )
+
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
 
 function provisioning_start() {
@@ -189,6 +193,9 @@ function provisioning_start() {
     provisioning_get_models \
         "${WORKSPACE}/ComfyUI/models/esrgan" \
         "${ESRGAN_MODELS[@]}"
+    provisioning_get_models \
+        "${WORKSPACE}/ComfyUI/models/pulid" \
+        "${PULID_MODELS[@]}"
     provisioning_get_workflows
     provisioning_print_end
 }
